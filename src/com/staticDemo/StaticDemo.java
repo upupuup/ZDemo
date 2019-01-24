@@ -1,4 +1,4 @@
-package com.com.staticDemo;
+package com.staticDemo;
 
 public class StaticDemo {
     private static String str1 = "staticProperty";

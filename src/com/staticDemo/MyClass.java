@@ -1,4 +1,4 @@
-package com.com.staticDemo;
+package com.staticDemo;
 
 public class MyClass extends Test2 {
     Person person = new Person("MyClass");

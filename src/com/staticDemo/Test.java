@@ -1,4 +1,4 @@
-package com.com.staticDemo;
+package com.staticDemo;
 
 public class Test extends Base {
     static {
