@@ -1,6 +1,9 @@
 package com.synchronizedDemo;
 
-public class MyRunnable implements Runnable {
+public class MyThread extends Thread {
+    public MyThread(String name) {
+        super(name);
+    }
 
     @Override
     public void run() {
@@ -8,7 +11,7 @@ public class MyRunnable implements Runnable {
             try {
                 for (int i = 0; i < 5; i++) {
                     Thread.sleep(100);
-                    System.out.println(Thread.currentThread().getName() + " loop " + i);
+                    System.out.println(Thread.currentThread().getName() + " loop:" + i);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
