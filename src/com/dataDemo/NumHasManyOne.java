@@ -6,7 +6,7 @@ package com.dataDemo;
 public class NumHasManyOne {
 
     public static void main(String[] args) {
-        int num = 0b1001;
+        int num = 0b1101;
         fun1(num);
         fun2(num);
     }
@@ -17,7 +17,7 @@ public class NumHasManyOne {
     private static void fun1(int num) {
         System.out.print("方法一---计算出二进制数"+ Integer.toBinaryString(num) + "有");
         int count = 0;
-        for (int i = 0; num > 0; i++) {
+        while(num > 0) {
             // 与1相与，判断值是否是1，不是说明这一位是0
             count += num & 1;
             num >>= 1;
@@ -31,7 +31,7 @@ public class NumHasManyOne {
     private static void fun2(int num) {
         System.out.print("方法二---计算出二进制数"+ Integer.toBinaryString(num) + "有");
         int count = 0;
-        for (int i = 0; num > 0; ++i) {
+        while (num > 0) {
             num &= (num - 1);
             count++;
         }
