@@ -5,7 +5,8 @@ package com.dataDemo;
  */
 public class IsTwoSquare {
     public static void main(String[] args) {
-        int num = 0b1000;
+        // int num = 0b1000;
+        int num = 16;
         fun1(num);
         fun2(num);
     }

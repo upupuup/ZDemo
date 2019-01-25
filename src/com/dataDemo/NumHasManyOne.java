@@ -6,7 +6,8 @@ package com.dataDemo;
 public class NumHasManyOne {
 
     public static void main(String[] args) {
-        int num = 0b1101;
+        // int num = 0b1101;
+        int num = 8;
         fun1(num);
         fun2(num);
     }
