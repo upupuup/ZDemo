@@ -4,13 +4,17 @@ import java.util.Scanner;
 
 public class CompareDemo {
     public static void main(String[] args) {
+        // 输入字符串A
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter string");
         String strA = scanner.nextLine();
+
+        // 输入字符串B
         scanner = new Scanner(System.in);
         System.out.println("enter another string");
         String strB = scanner.nextLine();
         int length = compared(strA, strB);
+
         System.out.println(length);
     }
 
@@ -42,6 +46,6 @@ public class CompareDemo {
                 }
             }
         }
-    return -1;
+        return -1;
     }
 }
