@@ -13,7 +13,7 @@ public class Test1 {
     public static int getMyRet(String s1) {
         int len = s1.length();
         List<String> list = new ArrayList<String>();
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i < len; i++) {
             list.add(s1.charAt(i) + "");
 
             System.out.println("list--->" + list);
@@ -62,5 +62,6 @@ public class Test1 {
             }
             int sum = Integer.parseInt(list.get(0));
             return sum;
+        }
     }
 }
