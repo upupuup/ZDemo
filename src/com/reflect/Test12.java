@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @Author: jiangzhihong
  * @CreateDate: 2020/10/13 22:28
  */
-public class Teat12 {
+public class Test12 {
     public static void main(String[] args) throws Exception {
         Class<?> c1 = Class.forName("com.reflect.Student2");
         Annotation[] annotations = c1.getAnnotations();
@@ -17,13 +17,20 @@ public class Teat12 {
         Arrays.stream(annotations).forEach(annotation -> {
             System.out.println(annotation);
         });
+        System.out.println("======");
 
-        // 获取注解属性
+        // 获取注解值
         Tablekuang tablekuang = c1.getAnnotation(Tablekuang.class);
         System.out.println(tablekuang.value());
+        System.out.println("======");
 
-        // 获取注解
+        // 获取注解属性
         Field name = c1.getDeclaredField("name");
+        Annotation[] annotationFields = name.getAnnotations();
+        Arrays.stream(annotationFields).forEach(annotation -> System.out.println(annotation));
+        System.out.println("======");
+
+        // 获取注解属值
         Fieldkuang fieldkuang = name.getAnnotation(Fieldkuang.class);
         System.out.println(fieldkuang.columnName());
         System.out.println(fieldkuang.type());
