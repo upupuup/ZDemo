@@ -6,7 +6,7 @@ package com.reflect;
  * @CreateDate: 2020/10/13 20:29
  */
 public class Test07 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         // 获取系统类的加载器
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
         System.out.println(systemClassLoader);
@@ -18,5 +18,10 @@ public class Test07 {
         // 获取扩展类加载器的父类加载器-->根加载器（c/c++）
         ClassLoader parent1 = parent.getParent();
         System.out.println(parent1);
+
+        Class<?> c1 = Class.forName("com.reflect.Test07");
+        ClassLoader classLoader = c1.getClassLoader();
+        System.out.println(classLoader);
+
     }
 }
