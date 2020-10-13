@@ -33,18 +33,21 @@ public class Test08 {
         System.out.println(name);
 
         // 获得类的方法
-        System.out.println("===========");
+        System.out.println("==========================");
 
         // 获得本类和父类的所有的public方法
         Method[] methods = c1.getMethods();
         Arrays.stream(methods).forEach(method -> System.out.println("正常的" + method));
 
+        System.out.println("==========================");
         // 获取本类的所有的方法
         Method[] declaredMethods = c1.getDeclaredMethods();
         Arrays.stream(declaredMethods).forEach(method -> System.out.println("本类的" + method));
 
         Method getName = c1.getMethod("getName", null);
         Method setName = c1.getMethod("setName", String.class);
+
+        System.out.println("==========================");
         System.out.println(getName);
         System.out.println(setName);
     }
