@@ -7,6 +7,7 @@ import java.util.List;
 public class ArrayListDemo {
     public static void main(String[] args) {
         List<String> firstList =  new ArrayList<>();
+        System.out.println("list初始化的大小：" + firstList.size() + "===");
         firstList.add("one");
         firstList.add("one");
         firstList.add("two");
