@@ -71,4 +71,8 @@ class User {
 				", age=" + age +
 				'}';
 	}
+
+	private void test() {
+		System.out.println("test");
+	}
 }
