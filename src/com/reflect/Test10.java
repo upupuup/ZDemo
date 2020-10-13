@@ -12,7 +12,7 @@ public class Test10 {
         User user = new User();
         long startTime = System.currentTimeMillis();
 
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
             user.getName();
         }
 
@@ -27,7 +27,7 @@ public class Test10 {
         Method getName = c1.getMethod("getName", null);
         long startTime = System.currentTimeMillis();
 
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
             getName.invoke(user, null);
         }
 
@@ -43,11 +43,17 @@ public class Test10 {
         getName.setAccessible(true);
         long startTime = System.currentTimeMillis();
 
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
             getName.invoke(user, null);
         }
 
         long endTime = System.currentTimeMillis();
         System.out.println("关闭权限：" + (endTime - startTime) + "ms");
+    }
+
+    public static void main(String[] args) throws Exception {
+        test01();
+        test02();
+        test03();
     }
 }
