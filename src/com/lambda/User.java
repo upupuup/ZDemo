@@ -32,4 +32,10 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+	public User(Long id, Long userId, String userName) {
+		this.id = id;
+		this.userId = userId;
+		this.userName = userName;
+	}
 }

@@ -14,6 +14,7 @@ public class LambdaDemo {
 	public static void main(String[] args) {
 		listForEach();
 		squareOfNumber();
+		userDemo();
 	}
 
 	/**
@@ -52,11 +53,26 @@ public class LambdaDemo {
 	public static void userDemo() {
 		List<User> queryList = new ArrayList<>();
 		// 记得塞数据
-		// 去除有相同用户主键的数据
+		queryList.add(new User(1L, 1L, "hhh"));
+		queryList.add(new User(1L, 1L, "hohoho"));
+		queryList.add(new User(1L, 2L, "hhhh2222"));
+		queryList.add(new User(1L, 2L, "hohoh2222"));
+		/**
+		 * 方法一
+		 * 去除有相同用户主键的数据
+		 * Collectors.collectingAndThen(W,M) 返回一个收集器
+		 * W：要转换的收集器 M：转换函数
+		 */
 		queryList = queryList.stream().collect(Collectors.collectingAndThen(
-				Collectors.toCollection(()->
-						new TreeSet<>(Comparator.comparing(obj -> obj.getUserId()))
-				), ArrayList::new));
-		System.out.println(queryList.toString());
+					Collectors.toCollection(()->
+							new TreeSet<>(Comparator.comparing(obj -> obj.getUserId()))
+					), ArrayList::new));
+
+		// 方法二
+		Map<Long, User> collect = queryList.stream().collect(Collectors.toMap(
+				User::getUserId, user -> user, (k1, k2) -> k1));
+		List<User> users = new ArrayList<>(collect.values());
+
+		System.out.println(users.toString());
 	}
 }
