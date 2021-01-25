@@ -17,7 +17,7 @@ public class Test {
         }
 
         // 等待10秒
-        Thread.sleep(10000);
+        Thread.sleep(100);
         System.out.println("我们的single单例模式测试");
 
         // 循环打印实例，小几率会出现2个或者多个实例
